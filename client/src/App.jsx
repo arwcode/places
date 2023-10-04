@@ -6,7 +6,7 @@ export default function App() {
 	return (
 		<div>
 			<h1>{state.title}</h1>
-			<p>Hi world!</p>
+			<p>Hi world :)</p>
 		</div>
 	)
 }
