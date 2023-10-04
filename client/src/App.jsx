@@ -1,12 +1,12 @@
-import { useAppContext } from './context/context.jsx'
+import { useAppContext } from './context/context.jsx';
+import Header from './components/layout/Header.jsx';
 
 export default function App() {
 	const { state } = useAppContext()
 
 	return (
 		<div>
-			<h1>{state.title}</h1>
-			<p>Hi world :)</p>
+			<Header />
 		</div>
 	)
 }
