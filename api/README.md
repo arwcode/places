@@ -8,48 +8,47 @@
 - **Method:** GET
 - **Description:** Get a list of all people.
 - **Response:**
-  - Status Code: 200 OK
   - Body: List of people in JSON format.
+  - Status Code: 200 OK
 
 ### Create a Person
 - **URL:** `/api/people`
 - **Method:** POST
 - **Description:** Create a new person.
-- **Request Body:**
-  - JSON object representing the person's data.
+- **Request:**
+  - Body: JSON object representing the person's data.
 - **Response:**
-  - Status Code: 201 Created
   - Body: JSON object representing the created person.
+  - Status Code: 201 Created
 
 ### Update a Person
-- **URL:** `/api/persons/:id`
+- **URL:** `/api/people/:id`
 - **Method:** PUT
 - **Description:** Update an existing person by ID.
-- **Request Parameters:**
-  - `id`: ID of the person to be updated.
-- **Request Body:**
-  - JSON object containing the updated person data.
+- **Request:**
+  - Parameters: `id`: ID of the person to be updated.
+  - Body: JSON object containing the updated person data.
 - **Response:**
-  - Status Code: 200 OK
   - Body: JSON object representing the updated person.
+  - Status Code: 200 OK
 
 ### Delete a Person
-- **URL:** `/api/persons/:id`
+- **URL:** `/api/people/:id`
 - **Method:** DELETE
 - **Description:** Delete a person by ID.
-- **Request Parameters:**
-  - `id`: ID of the person to be deleted.
+- **Request:**
+  - Parameters: `id`: ID of the person to be deleted.
 - **Response:**
-  - Status Code: 200 OK
   - Body: Message confirming the deletion.
+  - Status Code: 200 OK
 
 ### Delete All Persons
-- **URL:** `/api/persons`
+- **URL:** `/api/people`
 - **Method:** DELETE
 - **Description:** Delete all people.
 - **Response:**
-  - Status Code: 200 OK
   - Body: Message confirming the deletion of all people.
+  - Status Code: 200 OK
 
 ## Person Model
 

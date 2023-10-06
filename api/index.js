@@ -1,4 +1,4 @@
-// Import modules 
+// Import modules
 import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
@@ -13,39 +13,28 @@ import doc from './middlewares/doc.js'
 // Loading environment variables
 dotenv.config()
 
-// Define the port for Express server
-const PORT = process.env.PORT || 5000
-
 // Create an instance of the Express
 const app = express()
 
-// Request logger middleware
-app.use(logger)
+// Middlewares
+app.use(logger) // Logger
+app.use(express.json()) // JSON body parser
+app.use(cors()) // Cross-Origin Resource Sharing
 
-// CORS middleware
-app.use(cors())
-
-// JSON body parser middleware
-app.use(express.json())
-
-// API routes for handling person data
-app.use('/api/people', personRoutes)
-
-// API documentation
-app.use('/api/doc', doc);
-
-// Additional API routes
-app.use('/api', api)
+// Routes
+app.use('/api/people', personRoutes) // People
+app.use('/api/doc', doc) // API documentation
+app.use('/api', api) // Other API routes
 
 try {
 	// Connect to MongoDB
 	await mongoose.connect(process.env.MONGODB)
 
 	// Start the Express server
-	app.listen(PORT, () => {
+	app.listen(process.env.PORT || 5000, () => {
 		console.log(`
-Server started...
-http://localhost:${PORT}`)
+	Server started...
+	http://localhost:${PORT}`)
 	})
 } catch (err) {
 	console.error(err)
