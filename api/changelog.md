@@ -3,6 +3,7 @@
 ## 2023-10-06 [1.0.0]
 - Add changelog.md
 - REST API documentation
+- Config Express server
 
 ## 2023-10-05 
 
