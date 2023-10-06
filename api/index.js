@@ -22,6 +22,9 @@ const app = express()
 // Request logger middleware
 app.use(logger)
 
+// CORS middleware
+app.use(cors())
+
 // JSON body parser middleware
 app.use(express.json())
 
