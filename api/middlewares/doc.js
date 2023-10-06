@@ -20,6 +20,8 @@ export default async function (req, res) {
       <style>
         body {
           padding: 10px;
+          font-family: sans-serif;
+          line-height: 1.5;
         }
       </style>
     </head>
