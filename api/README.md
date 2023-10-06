@@ -23,7 +23,7 @@
 
 ### Update a Person
 - **URL:** `/api/people/:id`
-- **Method:** PUT
+- **Method:** PATCH
 - **Description:** Update an existing person by ID.
 - **Request:**
   - Parameters: `id`: ID of the person to be updated.
