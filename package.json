@@ -1,18 +1,16 @@
 {
-	"name": "my-places",
-	"version": "1.0.0",
+	"name": "mern",
 	"type": "module",
 	"private": true,
 	"workspaces": [
 		"client",
-		"server"
+		"api"
 	],
 	"scripts": {
-		"build": "npm run build --prefix client",
-		"client": "npm run dev --prefix client",
-		"server": "npm run dev --prefix server",
-		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"start": "npm run start ./api/index.js",
-		"test": "npm test --prefix server"
+		"api": "cd api && npm run dev",
+		"client": "cd client && npm run dev",
+		"build": "cd client && npm run build",
+		"start": "cd api && npm run start",
+		"dev": "concurrently \"npm run api\" \"npm run client\""
 	}
 }

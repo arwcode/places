@@ -1,5 +1,13 @@
-# React + Vite
+# React + Vite Project
 
-## 2023-10-04 
+## Description
 
-- Initial configuration React + Vite
+This is a simple React project using Vite as the build tool.
+
+## Dependencies
+
+Major dependencies of the project:
+
+- @emotion/react: ^11.11.1
+- react: ^18.2.0
+- react-dom: ^18.2.0

@@ -1,25 +1,44 @@
+// Import modules 
+import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
+// Import custom components
 import api from './controllers/api.controller.js'
-import personRoutes from  './routes/person.routes.js'
+import personRoutes from './routes/person.routes.js'
+import logger from './middlewares/logger.js'
+import doc from './middlewares/doc.js'
 
-import { PORT, MONGODB } from './config/config.js'
+// Loading environment variables
+dotenv.config()
 
+// Define the port for Express server
+const PORT = process.env.PORT || 5000
+
+// Create an instance of the Express
 const app = express()
 
-app.use(express.json())
-app.use((req, res, next) => {
-	console.log(req.method, req.url)
-	next()
-})
+// Request logger middleware
+app.use(logger)
 
-app.use('/api/persons', personRoutes)
+// JSON body parser middleware
+app.use(express.json())
+
+// API routes for handling person data
+app.use('/api/people', personRoutes)
+
+// API documentation
+app.use('/api/doc', doc);
+
+// Additional API routes
 app.use('/api', api)
 
 try {
-	await mongoose.connect(MONGODB)
+	// Connect to MongoDB
+	await mongoose.connect(process.env.MONGODB)
 
+	// Start the Express server
 	app.listen(PORT, () => {
 		console.log(`
 Server started...

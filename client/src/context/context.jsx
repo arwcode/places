@@ -5,7 +5,7 @@ export const useAppContext = () => useContext(Context)
 
 export const ContextProvider = ({ children }) => {
   const initialState = {
-    title: "MERN app works...now"
+    title: "MERN app works..."
   }
 
 	const [state, setState] = useState(initialState)
