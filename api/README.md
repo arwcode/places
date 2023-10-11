@@ -3,7 +3,7 @@
 
 ## Person Endpoints
 
-### Read All Persons
+### Read All People
 - **URL:** `/api/people`
 - **Method:** GET
 - **Description:** Get a list of all people.
@@ -42,7 +42,7 @@
   - Body: Message confirming the deletion.
   - Status Code: 200 OK
 
-### Delete All Persons
+### Delete All People
 - **URL:** `/api/people`
 - **Method:** DELETE
 - **Description:** Delete all people.

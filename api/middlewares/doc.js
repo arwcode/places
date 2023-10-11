@@ -8,7 +8,7 @@ const __dirname = dirname(__filename)
 
 const readmePath = join(__dirname, '..', 'README.md')
 
-export default async function (req, res) {
+export default async function doc (req, res) {
 	try {
 		const data = await fs.readFile(readmePath, 'utf8')
 		const html = marked(data)

@@ -5,10 +5,11 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 
 // Import controllers, middlewares and routes
-import api from './controllers/api.controller.js'
 import personRoutes from './routes/person.routes.js'
-import logger from './middlewares/logger.js'
+import notFound from './middlewares/notFound.js'
 import doc from './middlewares/doc.js'
+import errors from './middlewares/errors.js'
+import logger from './middlewares/logger.js'
 
 // Create an instance of the Express app
 const app = express()
@@ -21,7 +22,8 @@ app.use(cors()) // Cross-Origin Resource Sharing
 // Use routes
 app.use('/api/people', personRoutes) // People
 app.use('/api/doc', doc) // API documentation
-app.use('/api', api) // Other API routes
+app.use(notFound) // Other API routes
+app.use(errors) // Errors
 
 try {
 	// Loading .env

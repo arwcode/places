@@ -1,5 +1,8 @@
 # Change Log
 
+## 2023-10-11
+- Add error handling
+
 ## 2023-10-06 [1.0.0]
 - Add changelog.md
 - REST API documentation
